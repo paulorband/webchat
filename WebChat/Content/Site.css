@@ -1,0 +1,58 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.message-container {
+    max-height: 200px;
+    overflow: auto;
+    padding-bottom: 100px;
+    margin-bottom: 20px;
+}
+
+.chat-container-message, .message-container {
+    height: 100%
+}
+
+.text-message-container .text-area {
+    margin-bottom: 5px;
+}
+
+.users-container {
+    height: 300px;
+    overflow: auto
+}
+
+.channel-info {
+    padding: 5px;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+    .channel-info h4 {
+        display: inline;
+    }
+
+.alert {
+    padding: 5px !important;
+    margin-bottom: 2px !important;
+}
+
+.user-avatar label {
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: 100 !important;
+}

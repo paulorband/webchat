@@ -1,0 +1,63 @@
+﻿@model string
+@{
+    ViewBag.Title = "Web Chat";
+}
+
+<div class="alert alert-info" id="message-template" style="display:none">
+    <span class="js-user-text label"></span>
+    <span class="js-message-text"></span>
+</div>
+
+<div id="user-template" style="display:none">
+    <span class="glyphicon glyphicon-user user-avatar"><label></label></span>
+</div>
+
+<h3 id="waiting-msg">Conectando ao servidor...</h3>
+
+<div id="chat-container" style="display:none">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Bem Vindo @Model</h4>
+            <div class="panel panel-default">
+                <div class="panel-heading">Comandos disponíveis</div>
+                <div class="panel-body">
+                    <p>Use "@Html.Raw("@usuario")" para citar alguém</p>
+                    <p>Use "/p @Html.Raw("@usuario")" para enviar uma mensagem privada para alguém</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="height: 400px">
+        <div class="col-md-4">
+            <h4>Usuários na sala</h4>
+            <div class="users-container" id="users-container">
+                
+            </div>
+        </div>
+        <div class="col-md-8 chat-container-message">
+            <div class="channel-info">
+                <h4>#Geral</h4>
+                <button id="btnDisconnect" class="btn btn-xs btn-danger">Sair</button>
+            </div>
+            <div id="msgs" class="message-container">
+
+            </div>
+            <div class="text-message-container">
+                <div class="text-area">
+                    <textarea id="MessageField" class="form-control" rows="2"></textarea>
+                </div>
+                <button id="btnSend" class="btn btn-primary" type="button">Enviar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+
+            window.chat = new webChat('@Model');
+        });
+    </script>
+}
